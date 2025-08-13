@@ -2,10 +2,11 @@
 function totalFine(fare) {
   if (typeof fare !== "number") return "Invalid";
   if (fare <= 0) return "Invalid";
+  if (!fare) return "Invalid";
 
   return fare + fare * (20 / 100) + 30;
 }
-// console.log (totalFine(552));
+// console.log(totalFine("65"));
 //!SECTION Problem 1
 
 //SECTION - Problem 2
@@ -18,13 +19,16 @@ function onlyCharacter(str) {
   }
   return newStr.toUpperCase();
 }
-// console.log (onlyCharacter(["hack", "me"]));
+// console.log(onlyCharacter(null));
 //!SECTION Problem 2
 
 //SECTION - Problem 3
 function bestTeam(player1, player2) {
+  if (!player1 || !player2) return "Invalid";
   if (typeof player1 !== "object") return "Invalid";
   if (typeof player2 !== "object") return "Invalid";
+  if (Object.keys(player1).length === 0) return "Invalid";
+  if (Object.keys(player2).length === 0) return "Invalid";
 
   let nFoul1 = player1.foul + player1.cardR + player1.cardY;
   let nFoul2 = player2.foul + player2.cardR + player2.cardY;
@@ -33,8 +37,8 @@ function bestTeam(player1, player2) {
   else if (nFoul1 < nFoul2) return player1.name;
   else return player2.name;
 }
-// const t1 = "Bangladesh";
-// const t2 = { name: "Brazil", foul: 5, cardY: 1, cardR: 0 };
+// const t1 = undefined;
+// const t2 = null;
 // console.log(bestTeam(t1, t2));
 //!SECTION Problem 3
 
@@ -49,7 +53,7 @@ function isSame(arr1, arr2) {
   }
   return true;
 }
-// console.log(isSame([34 , 5 ,7 ,9 ], [ 34 , 5 , 7 ]));
+// console.log(isSame(NaN,undefined));
 //!SECTION Problem 4
 
 //SECTION - Problem 5
@@ -58,6 +62,7 @@ function resultReport(marks) {
 
   let cPass = 0, cFail = 0, total = 0;
   for (let i = 0; i < marks.length; i++) {
+    if (marks[i] === null || marks[i] === undefined) continue;
     marks[i] >= 40 ? cPass++ : cFail++;
     total += marks[i];
   }
@@ -66,8 +71,8 @@ function resultReport(marks) {
     finalScore: marks.length === 0 ? 0 : Math.round(total / marks.length),
     pass: cPass,
     fail: cFail,
-  }
+  };
 }
-// console.log(resultReport([98, 87, 67, 91, 92, 33, 87]));
+// console.log(resultReport([null]));
 // console.log (0/0);
 //!SECTION Problem 5

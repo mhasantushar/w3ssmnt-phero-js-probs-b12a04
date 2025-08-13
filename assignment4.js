@@ -5,7 +5,7 @@ function totalFine(fare) {
 
   return fare + fare * (20 / 100) + 30;
 }
-// console.log (totalFine("Gorib tai ticket katinai"));
+// console.log (totalFine(552));
 //!SECTION Problem 1
 
 //SECTION - Problem 2
@@ -18,7 +18,7 @@ function onlyCharacter(str) {
   }
   return newStr.toUpperCase();
 }
-// console.log (onlyCharacter(true));
+// console.log (onlyCharacter(["hack", "me"]));
 //!SECTION Problem 2
 
 //SECTION - Problem 3
@@ -33,8 +33,8 @@ function bestTeam(player1, player2) {
   else if (nFoul1 < nFoul2) return player1.name;
   else return player2.name;
 }
-// const t1 = { name: "Germany", foul: 10, cardY: 1, cardR: 1 };
-// const t2 = { name: "Sweden", foul: 7, cardY: 4, cardR: 1 };
+// const t1 = "Bangladesh";
+// const t2 = { name: "Brazil", foul: 5, cardY: 1, cardR: 0 };
 // console.log(bestTeam(t1, t2));
 //!SECTION Problem 3
 
@@ -49,7 +49,7 @@ function isSame(arr1, arr2) {
   }
   return true;
 }
-// console.log(isSame({data: [2 , 5 , 6] } , [2 , 5 , 6]));
+// console.log(isSame([34 , 5 ,7 ,9 ], [ 34 , 5 , 7 ]));
 //!SECTION Problem 4
 
 //SECTION - Problem 5
@@ -68,6 +68,6 @@ function resultReport(marks) {
     fail: cFail,
   }
 }
-// console.log(resultReport([]));
+// console.log(resultReport([98, 87, 67, 91, 92, 33, 87]));
 // console.log (0/0);
 //!SECTION Problem 5

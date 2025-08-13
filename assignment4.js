@@ -66,7 +66,7 @@ function resultReport(marks) {
     finalScore: marks.length === 0 ? 0 : Math.round(total / marks.length),
     pass: cPass,
     fail: cFail,
-  };
+  }
 }
 // console.log(resultReport([]));
 // console.log (0/0);

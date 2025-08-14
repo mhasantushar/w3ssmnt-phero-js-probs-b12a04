@@ -62,7 +62,8 @@ function resultReport(marks) {
 
   let cPass = 0, cFail = 0, total = 0;
   for (let i = 0; i < marks.length; i++) {
-    if (marks[i] === null || marks[i] === undefined) continue;
+    if (marks[i] === null) continue;
+    if (marks[i] === undefined) continue;
     marks[i] >= 40 ? cPass++ : cFail++;
     total += marks[i];
   }
